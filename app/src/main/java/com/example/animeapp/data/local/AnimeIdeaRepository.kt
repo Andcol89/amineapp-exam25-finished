@@ -26,6 +26,8 @@ class AnimeIdeaRepository(private val dao: AnimeIdeaDao) {
         dao.delete(idea)
     }
 
-    // Henter én idé etter id
-    suspend fun getIdea(id: Int): AnimeIdeaEntity? = dao.getById(id)
+    // Kode som vi ikke bruker nå
+    /* Henter én idé etter id
+   // suspend fun getIdea(id: Int): AnimeIdeaEntity? = dao.getById(id)
+*/
 }

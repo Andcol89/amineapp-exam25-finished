@@ -34,14 +34,14 @@ fun CreateScreen(
     navController: NavController,
     vm: CreateViewModel
 ) {
-    // Input hentes fra ViewModel (tittel og beskrivelse som overlever navigasjon)
+    // Input hentes fra ViewModel
     val title by vm.title.collectAsState()
     val description by vm.description.collectAsState()
 
     // Om lagrede animes/karakter skal vises
     val showSaved by vm.showSaved.collectAsState()
 
-    // Feilmelding til bruker - lokal state
+    // Feilmelding til bruker - local state
     var errorMessage by remember { mutableStateOf<String?>(null) }
 
     // Alle lagrede ideer fra Room
@@ -85,7 +85,7 @@ fun CreateScreen(
 
             Spacer(Modifier.height(8.dp))
 
-            // Tekstfelt for beskrivelse av anime-serien
+            // Tekstfelt for beskrivelse av animeserien
             OutlinedTextField(
                 value = description,
                 onValueChange = { vm.setDescription(it) },
@@ -280,7 +280,7 @@ fun CreateScreen(
                 } else {
                     Spacer(Modifier.height(6.dp))
 
-                    // Viser alle lagrede anime-ideer i klikkbare bokser
+                    // Viser alle lagrede anime-ideer
                     ideas.forEach { idea ->
                         val isSelected = selectedIdea?.id == idea.id
 
@@ -318,7 +318,7 @@ fun CreateScreen(
                             }
                             Spacer(Modifier.height(4.dp))
                             Text(
-                                text = "Tap this card to load and edit this idea.",
+                                text = "Tap here to edit this idea.",
                                 style = MaterialTheme.typography.bodySmall,
                                 color = MaterialTheme.colorScheme.secondary
                             )

@@ -10,7 +10,7 @@ import com.example.animeapp.data.local.exstra.FavoriteAnimeEntity
 // Holder på database-instansen
 private var instance: AnimeIdeaDatabase? = null
 
-// Gir databasen (lager den hvis den ikke finnes)
+// Gir info til databasen
 fun getAnimeIdeaDatabase(context: Context): AnimeIdeaDatabase {
     if (instance == null) {
         instance = Room.databaseBuilder(
