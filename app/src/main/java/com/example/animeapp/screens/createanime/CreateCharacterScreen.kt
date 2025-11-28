@@ -173,7 +173,7 @@ fun CreateCharacterScreen(
             Text("Save character")
         }
 
-        // Vis feilmelding hvis noe er galt
+        // Vis feilmelding hvis noe ikke går som det skal
         charError?.let { msg ->
             Spacer(Modifier.height(8.dp))
             Text(
